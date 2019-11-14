@@ -1,0 +1,88 @@
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+/**
+ * Public tests for the Film class.
+ * @author Weijin Zhang
+ * @version 2019-10-20
+ */
+public class FlimTests {
+	private Date date;
+	private Film Titanic;
+	
+	@BeforeEach
+	public void BeforeEach() {
+		//public Film (String title, Date releaseDate, int length) {
+		date = new Date(19, "December", 1997);
+		
+		Titanic = new Film("Titanic", date, 194);
+	}
+	
+	//testing getter for date.day
+	@Test
+	public void test1() {
+		int expectedDay = 19;
+		int actualDay = Titanic.getReleaseDate().getDay();
+		assertEquals(expectedDay, actualDay, "failure in test1: " + " expected day does not equal the actual day");
+	}
+
+	//testing getter for date.month
+	@Test
+	public void test2() {
+		String expectedMonth = "December";
+		String actualMonth = Titanic.getReleaseDate().getMonth();
+		assertEquals(expectedMonth, actualMonth,
+				"failure in test2: " + " expected month does not equal the actual month");
+	}
+
+	//testing getter for date.year
+	@Test
+	public void test3() {
+		int expectedYear = 1997;
+		int actualYear = Titanic.getReleaseDate().getYear();
+		assertEquals(expectedYear, actualYear, "failure in test3: " + " expected year does not equal the actual year");
+	}
+
+	//testing getter for title
+	@Test
+	public void test4() {
+		String expectedTitle = "Titanic";
+		String actualTitle = Titanic.getTitle();
+		assertEquals(expectedTitle, actualTitle,
+				"failure in test4: " + " expected title does not equal the actual title");
+	}
+
+	//testing getter for length
+	@Test
+	public void test5() {
+		int expectedLength = 194;
+		int actualLength = Titanic.getLength();
+		assertEquals(expectedLength, actualLength,
+				"failure in test5: " + " expected length does not equal the actual length");
+	}
+
+	//testing to update the date
+	@Test
+	public void test6() {
+		Date updatedReleaseDate = new Date(27, "March", 2012);
+		Titanic.setReleaseDate(updatedReleaseDate);
+
+		String expectedDate = "27 March 2012";
+		String actualDate = Titanic.getReleaseDate().toString();
+
+		assertEquals(expectedDate, actualDate, "failure in test6: " + " expected date does not equal the actual date");
+	}
+
+	//testing constructor for creating a new film.
+	@Test
+	public void test7() {
+		Date newReleaseDate = new Date(01, "January", 2022);
+		Film joker = new Film("Joker", newReleaseDate, 122);
+		
+		String expectedFilm = "Film [title=Joker, releaseDate=1 January 2022, length=122]";
+		String actualFilm = joker.toString();
+		assertEquals(expectedFilm, actualFilm, "failure in test7: " + " expected date does not equal the actual date");
+	}
+
+}
