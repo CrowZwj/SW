@@ -1,0 +1,73 @@
+
+public class Film {
+	private String title;
+	private Date releaseDate;
+	private int length;
+	
+	/**
+	 *  @param title The title of the film. 
+	 *  @param releaseDate The releaseDate of the film.
+	 *  @param length The length of the film.  
+	 */ 
+	public Film (String title, Date releaseDate, int length) {
+		this.title = title;
+		this.releaseDate = releaseDate;
+		this.length = length;
+	}
+	
+	/** 
+	 * Getter for the title. 
+	 * @return The title of the film is returned. 
+	 */ 
+	public String getTitle() {
+		return title;
+	}
+	/** 
+	 * Getter for the releaseDate. 
+	 * @return The releaseDate of the film is returned. 
+	 */ 
+	public Date getReleaseDate() {
+		return releaseDate;
+	}
+	/** 
+	 * Getter for the length. 
+	 * @return The length of the film is returned. 
+	 */ 
+	public int getLength() {
+		return length;
+	}
+	
+	/**
+	 * Setter for the  releaseDate. The  releaseDate of the film is updated. 
+	 * @param  releaseDate The new  releaseDate of the updated film. 
+	 */ 
+	public void setReleaseDate(Date releaseDate) {
+		this.releaseDate = releaseDate;
+	}
+	
+	/** 
+	 * @return A description of the film in form of the three field variables specifying it. 
+	 */ 
+	public String toString() {
+		System.out.println("Film [title=" + title + ", releaseDate=" + releaseDate + ", length=" + length + "]");
+		return "Film [title=" + title + ", releaseDate=" + releaseDate + ", length=" + length + "]";
+	}
+	
+	/**
+	 * a Main method create an example object Film adAstra with 
+	 * title "Ad Astra",
+	 * release date new Date(18, "September", 2019),
+	 * and length 123 minutes.
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Film adAstra;
+		Date date;
+		date = new Date(18, "September", 2019);
+		adAstra = new Film("Ad Astra", date, 123);
+		adAstra.toString();
+	}
+		
+}
+
+
