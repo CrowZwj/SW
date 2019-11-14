@@ -1,0 +1,252 @@
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
+
+/**
+ *  The class contains 32 tests to test the constructor, the getters and the setters in the Car class.
+ *  @author Weijin Zhang
+ *  @version 2019-10-20
+ */
+
+public class CarTests {
+	
+	private Car car1;
+	private Car car2;
+	private Car car3;
+	private Car car4;
+
+	@BeforeEach
+	public void beforeEach(){
+    //public Car(String make, int price, int maxSpeed, String colour){
+		car1 = new Car("Audi", 20000, 240, "gray");
+        car2 = new Car("BMW", 25000, 220, "red");
+        car3 = new Car("VW", 0, 0, "yellow");
+        car4 = new Car("", -10, -10, "");		
+	}
+	
+	//testing getter for make
+	@Test
+	public void testMake1() {
+		String expected = "Audi";
+		String actual = car1.getMake();
+		assertEquals(expected, actual, "error in getMake");
+	}	
+	@Test
+	public void testMake2() {
+		String expected = "BMW";
+		String actual = car2.getMake();
+		assertEquals(expected, actual, "error in getMake");
+	}	
+	@Test
+	public void testMake3() {
+		String expected = "VW";
+		String actual = car3.getMake();
+		assertEquals(expected, actual, "error in getMake");
+	}	
+	@Test
+	public void testMake4() {
+		String expected = "";
+		String actual = car4.getMake();
+		assertEquals(expected, actual, "error in getMake");
+	}
+	
+	//testing getter for price
+	@Test
+	public void testPrice1() {
+		int expected = 20000;
+		int actual = car1.getPrice();
+		assertEquals(expected, actual, "error in getPrice");
+	}
+	@Test
+	public void testPrice2() {
+		int expected = 25000;
+		int actual = car2.getPrice();
+		assertEquals(expected, actual, "error in getPrice");
+	}
+	@Test
+	public void testPrice3() {
+		int expected = 0;
+		int actual = car3.getPrice();
+		assertEquals(expected, actual, "error in getPrice");
+	}
+	@Test
+	public void testPrice4() {
+		int expected = -10;
+		int actual = car4.getPrice();
+		assertEquals(expected, actual, "error in getPrice");
+	}
+	
+	// testing getter for maxSpeed
+		@Test
+		public void testmaxSpeed1() {
+			int expected = 240;
+			int actual = car1.getMaxSpeed();
+			assertEquals(expected, actual, "error in getMaxSpeed");
+		}
+		@Test
+		public void testmaxSpeed2() {
+			int expected = 220;
+			int actual = car2.getMaxSpeed();
+			assertEquals(expected, actual, "error in getMaxSpeed");
+		}
+		@Test
+		public void testmaxSpeed3() {
+			int expected = 0;
+			int actual = car3.getMaxSpeed();
+			assertEquals(expected, actual, "error in getMaxSpeed");
+		}
+		@Test
+		public void testmaxSpeed4() {
+			int expected = -10;
+			int actual = car4.getMaxSpeed();
+			assertEquals(expected, actual, "error in getMaxSpeed");
+		}
+		
+		// testing getter for colour
+		@Test
+		public void testColour1() {
+			String expected = "gray";
+			String actual = car1.getColour();
+			assertEquals(expected, actual, "error in getColour");
+		}
+		@Test
+		public void testColour2() {
+			String expected = "red";
+			String actual = car2.getColour();
+			assertEquals(expected, actual, "error in getColour");
+		}
+		@Test
+		public void testColour3() {
+			String expected = "yellow";
+			String actual = car3.getColour();
+			assertEquals(expected, actual, "error in getColour");
+		}
+		@Test
+		public void testColour4() {
+			String expected = "";
+			String actual = car4.getColour();
+			assertEquals(expected, actual, "error in getColour");
+		}
+		
+		// testing setter for make
+		@Test
+		public void testSetMake1() {
+			car1.setMake("Benz");
+			String expected = "Benz";
+			String actual = car1.getMake();
+			assertEquals(expected, actual, "error in setMake");
+		}
+		@Test
+		public void testSetMake2() {
+			car2.setMake("Mini");
+			String expected = "Mini";
+			String actual = car2.getMake();
+			assertEquals(expected, actual, "error in setMake");
+		}
+		@Test
+		public void testSetMake3() {
+			car3.setMake("");
+			String expected = "";
+			String actual = car3.getMake();
+			assertEquals(expected, actual, "error in setMake");
+		}
+		@Test
+		public void testSetMake4() {
+			car4.setMake(",./");
+			String expected = ",./";
+			String actual = car4.getMake();
+			assertEquals(expected, actual, "error in setMake");
+		}
+		
+		// testing setter for price
+		@Test
+		public void testSetPrice1() {
+			car1.setPrice(-10);
+			int expected = -10;
+			int actual = car1.getPrice();
+			assertEquals(expected, actual, "error in setPrice");
+		}
+		@Test
+		public void testSetPrice2() {
+			car2.setPrice(0);
+			int expected = 0;
+			int actual = car2.getPrice();
+			assertEquals(expected, actual, "error in setPrice");
+		}
+		@Test
+		public void testSetPrice3() {
+			car3.setPrice(10);
+			int expected = 10;
+			int actual = car3.getPrice();
+			assertEquals(expected, actual, "error in setPrice");
+		}
+		@Test
+		public void testSetPrice4() {
+			car4.setPrice(15000);
+			int expected = 15000;
+			int actual = car4.getPrice();
+			assertEquals(expected, actual, "error in setPrice");
+		}
+		
+		// testing setter for maxSpeed
+		@Test
+		public void testSetMaxSpeed1() {
+			car1.setMaxSpeed(-10);
+			int expected = -10;
+			int actual = car1.getMaxSpeed();
+			assertEquals(expected, actual, "error in setMaxSpeed");
+		}
+		@Test
+		public void testSetMaxSpeed2() {
+			car2.setMaxSpeed(0);
+			int expected = 0;
+			int actual = car2.getMaxSpeed();
+			assertEquals(expected, actual, "error in setMaxSpeed");
+		}
+		@Test
+		public void testSetMaxSpeed3() {
+			car3.setMaxSpeed(10);
+			int expected = 10;
+			int actual = car3.getMaxSpeed();
+			assertEquals(expected, actual, "error in setMaxSpeed");
+		}
+		@Test
+		public void testSetMaxSpeed4() {
+			car4.setMaxSpeed(123);
+			int expected = 123;
+			int actual = car4.getMaxSpeed();
+			assertEquals(expected, actual, "error in setMaxSpeed");
+		}
+		
+		// testing setter for setColour
+		@Test
+		public void testSetColour1() {
+			car1.setColour("green");
+			String expected = "green";
+			String actual = car1.getColour();
+			assertEquals(expected, actual, "error in setColour");
+		}
+		@Test
+		public void testSetColour2() {
+			car2.setColour("white");
+			String expected = "white";
+			String actual = car2.getColour();
+			assertEquals(expected, actual, "error in setColour");
+		}
+		@Test
+		public void testSetColour3() {
+			car3.setColour("");
+			String expected = "";
+			String actual = car3.getColour();
+			assertEquals(expected, actual, "error in setColour");
+		}
+		@Test
+		public void testSetColour4() {
+			car4.setColour(",./");
+			String expected = ",./";
+			String actual = car4.getColour();
+			assertEquals(expected, actual, "error in setColour");
+		}
+
+}
