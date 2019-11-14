@@ -1,0 +1,88 @@
+public class Good {
+	public static final double VAT_RATE = 20;
+	private double netPrice;
+	private String name;
+	private double grossPrice;
+	
+	/**
+	 *  @param name The name of the good. 
+	 *  @param netPrice The netPrice of the good. 
+	 */ 
+	public Good(String name,double netPrice){
+		this.name=name;
+		this.netPrice=netPrice;
+		this.grossPrice=netPrice*(1+VAT_RATE*0.01);
+	}
+	
+	/** 
+	 * Getter for the grossPrice. 
+	 * @return The grossPrice of the good is returned. 
+	 */ 
+	public double getGrossPrice() {
+		return grossPrice ;
+	}
+	/** 
+	 * Getter for the name. 
+	 * @return The name of the good is returned. 
+	 */ 
+	public String getName() {
+		return name;
+	}
+	/** 
+	 * Getter for the eetPrice. 
+	 * @return The netPrice of the good is returned. 
+	 */ 
+	public double getNetPrice() {
+		return netPrice;
+	}
+	
+	/**
+	 * Setter for the grossPrice. The  grossPrice of the good is updated. 
+	 * @param  grossPrice The new grossPrice of the updated good. 
+	 */ 
+	public void setGrossPrice(double grossPrice) {
+		this.grossPrice = grossPrice;
+	}
+	/**
+	 * Setter for the netPrice. The netPrice and the grossPrice of the good are updated. 
+	 * @param  netPrice The new netPrice of the updated good. 
+	 */ 
+	public void setNetPrice(double netPrice) {
+		this.netPrice = netPrice;
+		this.grossPrice=netPrice*(1+VAT_RATE*0.01);
+	}
+	/**
+	 * Setter for the name. The  name of the good is updated. 
+	 * @param  name The new name of the updated good. 
+	 */ 
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	/**
+	 * Get the grossPrice of the good 
+	 * @return  grossPrice The grossPrice of the good. 
+	 */ 
+	public double grossPrice() {
+		double grossPrice=getGrossPrice();
+		return grossPrice;
+	}
+	
+	/**
+	 * Set the grossPrice of the good after the discount.
+	 * @param rate The rate of the discount. 
+	 */ 
+	public void discount(double rate) {
+		double Price=getGrossPrice()*(1-rate*0.01);
+		setGrossPrice(Price);
+	}
+	
+	/** 
+	 * @return A description of the name and grossprice of the good. 
+	 */ 
+	public String toString(){
+		grossPrice=(double)Math.round(grossPrice*100)*0.01;
+		String str=String.format("%.2f", grossPrice);
+		return "The "+name+" has a gross price of \u00A3"+str+".";
+	 }
+}
